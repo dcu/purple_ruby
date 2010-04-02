@@ -6,4 +6,5 @@ ext/mkmf.log
 lib/*.bundle
 lib/*.so
 lib/*.o
+pkg/*.gem
 
