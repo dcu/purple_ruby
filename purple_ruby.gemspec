@@ -5,48 +5,56 @@
 
 Gem::Specification.new do |s|
   s.name = %q{purple_ruby}
-  s.version = "0.7.0"
+  s.version = "0.6.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Xue Yong Zhi", "Pradeep Elankumaran", "Davide D'Agostino", "Pavel Valodzka", "Greg Hazel"]
-  s.date = %q{2010-04-02}
-  s.description = %q{A ruby gem to write server that sends and recives IM messages}
-  s.email = %q{}
+  s.authors = ["yong"]
+  s.date = %q{2010-06-18}
+  s.description = %q{A ruby gem to write server that sends and receives IM messages}
+  s.email = %q{yong@intridea.com}
   s.extensions = ["ext/extconf.rb"]
   s.extra_rdoc_files = [
-    "LICENSE",
-     "README.rdoc"
+    "README.rdoc"
   ]
   s.files = [
-    ".gitignore",
+    ".document",
+     ".gitignore",
      "History.txt",
-     "Manifest.txt",
      "README.rdoc",
      "Rakefile",
+     "VERSION",
      "examples/purplegw_example.rb",
      "ext/account.c",
      "ext/extconf.rb",
-     "ext/purple_ruby.c",
+     "ext/purple_ruby_ext.c",
      "ext/reconnect.c",
-     "lib/purple_ruby.rb"
+     "lib/purple_ruby.rb",
+     "purple_ruby.gemspec",
+     "spec/purple_ruby_spec.rb",
+     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/valodzka/purple_ruby}
+  s.homepage = %q{http://github.com/nofxx/purple_ruby}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
-  s.summary = %q{A ruby gem to write server that sends and recives IM messages}
+  s.rubygems_version = %q{1.3.7}
+  s.summary = %q{Gem to send and receive IM messages}
   s.test_files = [
-    "examples/purplegw_example.rb"
+    "spec/spec_helper.rb",
+     "spec/purple_ruby_spec.rb",
+     "examples/purplegw_example.rb"
   ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
     else
+      s.add_dependency(%q<rspec>, [">= 1.2.9"])
     end
   else
+    s.add_dependency(%q<rspec>, [">= 1.2.9"])
   end
 end
 
